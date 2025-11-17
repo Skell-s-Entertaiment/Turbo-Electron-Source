@@ -1,26 +1,39 @@
 {
-  "name": "catchers",
+  "name": "projecto-megumi",
+  "main": "main.js",
   "version": "1.0.0",
-  "description": "A Mexican FNAF Fangame!",
-  "keywords": [
-    "fnaf",
-    "fangame",
-    "electron",
-    "web",
-    "scratch"
-  ],
-  "license": "MIT",
-  "author": "Skellent",
-  "type": "commonjs",
-  "main": "index.js",
+  "description": "Aplicación reconstruida de Electron.",
   "scripts": {
-    "ejecutar": "electron .",
-    "compilar": "electron-builder",
-    "compilar:win": "electron-builder --win",
-    "compilar:mac": "electron-builder --mac",
-    "compilar:linux": "electron-builder --linux"
+    "start": "electron .",
+    "build": "electron-builder --linux --win --mac"
+  },
+  "dependencies": {},
+  "build": {
+    "appId": "com.tuempresa.projectomegumi",
+    "productName": "Projecto Megumi",
+    "files": [
+      "**/*",
+      "!node_modules/*",
+      "!dist/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "icon.png"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "icon.png"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "icon.png"
+    }
   },
   "devDependencies": {
-    "electron": "^39.2.1"
+    "electron": "^31.0.0",
+    "electron-builder": "^24.9.1"
   }
 }
