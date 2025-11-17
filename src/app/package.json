@@ -1,0 +1,26 @@
+{
+  "name": "catchers",
+  "version": "1.0.0",
+  "description": "A Mexican FNAF Fangame!",
+  "keywords": [
+    "fnaf",
+    "fangame",
+    "electron",
+    "web",
+    "scratch"
+  ],
+  "license": "MIT",
+  "author": "Skellent",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "ejecutar": "electron .",
+    "compilar": "electron-builder",
+    "compilar:win": "electron-builder --win",
+    "compilar:mac": "electron-builder --mac",
+    "compilar:linux": "electron-builder --linux"
+  },
+  "devDependencies": {
+    "electron": "^39.2.1"
+  }
+}
