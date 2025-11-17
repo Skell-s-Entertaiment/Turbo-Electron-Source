@@ -4,14 +4,14 @@ const path = require('path');
 
 /* DISCORD RICH PRESENCE */
 const RPC = require('discord-rpc');
-const clientId = '1413723241339424919'; // AppID de Catcher's
-let estado = "Playing Catcher's Arcade!"; // Variable con el Estado por Defecto de Rich Presence
+const clientId = '<AppID>'; // AppID de la aplicacion
+let estado = "Playing!"; // Variable con el Estado por Defecto de Rich Presence
 // Configuracion del Rich Presence
 const rpc = new RPC.Client({ transport: 'ipc' });
 rpc.on('ready', () => {
     rpc.setActivity({
         details: estado,
-        state: 'Playing!',
+        state: 'Playing',
         // largeImageKey: './rich-presence-icon.png', (Creo que es para cambiar la imagen dinamicamente)
         startTimestamp: new Date(),
         instance: false,
@@ -53,7 +53,7 @@ const createWindow = (windowOptions) => {
       contextIsolation: true,
       nodeIntegration: false,
     },
-    frame: false,
+    frame: true,
     resizable: true,
     show: true,
     width: 480,
@@ -176,12 +176,11 @@ app.on('web-contents-created', (event, contents) => {
   contents.on('before-input-event', (e, input) => {
     const window = BrowserWindow.fromWebContents(contents);
     if (!window || input.type !== "keyDown") return;
-    /*
     if (input.key === 'F11' || (input.key === 'Enter' && input.alt)) {
       window.setFullScreen(!window.isFullScreen());
     } else if (input.key === 'Escape' && window.isFullScreen()) {
       window.setFullScreen(false);
-    }*/
+    }
   });
 });
 
