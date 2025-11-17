@@ -1,16 +1,21 @@
 {
-  "name": "projecto-megumi",
+  "name": "proyecto-megumi",
   "main": "main.js",
   "version": "1.0.0",
-  "description": "Aplicación reconstruida de Electron.",
+  "description": "Catcher's Minigames!",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --linux --win --mac"
+    "build:all": "electron-builder --linux --win --mac",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
   },
-  "dependencies": {},
+  "dependencies": {
+    "discord-rpc": "^4.0.1"
+  },
   "build": {
-    "appId": "com.tuempresa.projectomegumi",
-    "productName": "Projecto Megumi",
+    "appId": "com.skellent.catchersarcade",
+    "productName": "Catcher's Arcade",
     "files": [
       "**/*",
       "!node_modules/*",
